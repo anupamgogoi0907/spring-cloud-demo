@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: zuul-gateway
+server:
+  port: 9090
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    r1:
+      path: /service-account/*
+      service-id: SERVICE-ACCOUNT
+    r2:
+      path: /service-customer/*
+      service-id: SERVICE-CUSTOMER
